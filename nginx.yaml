@@ -1,0 +1,18 @@
+
+---
+- name: install nginx and java 17
+  hosts: 172.31.27.179
+  become: yes
+
+  tasks:
+  - name: install nginx
+    ansible.builtin.apt:
+      name: nginx
+      update_cache: yes
+      state: present
+
+  tasks:
+  - name: install java17
+    ansible.builtin.apt:
+      name: openjdk-17-jdk
+      state: present    
